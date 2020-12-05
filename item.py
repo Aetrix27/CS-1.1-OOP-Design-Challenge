@@ -7,7 +7,7 @@ class Item:
         self.max_speed = max_speed
     
     def increaseSpeed(self):
-        self.max_speed += 5
+        self.max_speed += PowerUp.speedUp(self)
 
 
 
