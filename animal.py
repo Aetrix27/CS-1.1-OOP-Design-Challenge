@@ -1,6 +1,13 @@
-class Animal:
-    def __init__(self, init_health=100):
-        self.speed = 0
+from racer import Racer
 
-    def bark(self):
-        print("woof!")
+class Animal(Racer):
+    def __init__(self, speed, health):
+        super().__init__(speed, health)
+        self.animalSpeed()
+        self.setAnimal()
+
+    def animalSpeed(self):
+      self.speed += 10
+
+    def setAnimal(self):
+        self.animal= input("What animal do you want to be?")

@@ -1,7 +1,7 @@
-import animal
+from powerup import PowerUp
 
 #add object to hit and decrease health
-class item:
+class Item:
     def __init__(self, name, max_speed):
         self.name = name
         self.max_speed = max_speed

@@ -1,12 +1,15 @@
-import animal
-import item
+from item import Item
+from racer import Racer
+from cyborg import Cyborg
+import random
 
-class powerUp(item):
+class PowerUp(Item, Cyborg):
     def speedUp(self):
-        random_int = 3
+        random_int = random.randint(0,60)
         return random_int
 
     #def takeChance():
       #  print("fdsa")
+      
 
-#Animal(powerUp(5, Animal.speed))
+racer1 = Racer(5)
