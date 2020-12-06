@@ -1,9 +1,8 @@
 from item import Item
 from racer import Racer
-from cyborg import Cyborg
 import random
 
-class PowerUp(Item, Cyborg):
+class PowerUp(Item):
     def speedUp(self):
         random_int = random.randint(0,60)
         return random_int
