@@ -9,6 +9,7 @@ class Cyborg(Racer):
    
    def setCyborgColor(self):
       self.cyborgColor = input("What do you want your cyborg color to be?")
+      print(f"You are a {self.cyborgColor} colored cyborg")
 
    def cyborgHealth(self):
       self.health += 10
