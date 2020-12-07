@@ -1,20 +1,15 @@
 from racer import Racer
-from item import Item
-from powerup import PowerUp
-
 
 class Animal(Racer):
-    def __init__(self, speed, health):
-        super().__init__(speed, health)
-        self.animalSpeed()
-        self.setAnimal()
+    def __init__(self):
+        self.health = 100
+        self.speed = 35
+        super().__init__(self.health, self.speed)
+        self.setAnimalSpecies()
 
-    def animalSpeed(self):
-      self.speed += 10
+    def setAnimalSpecies(self):
+      self.animal = input("What animal species do you want to be?")
+      print(f"You are a {self.animal}")
 
-    def setAnimal(self):
-        self.animal= input("What animal do you want to be?")
 
-tiger = Animal(10, 100)
-print(tiger.speed)
-print(tiger.animal)
+

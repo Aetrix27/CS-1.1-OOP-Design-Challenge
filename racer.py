@@ -1,9 +1,10 @@
 from powerup import PowerUp
 from item import Item
+import random
 
 class Racer:
-    def __init__(self, health=100):
-        self.speed = 30
+    def __init__(self, health, speed):
+        self.speed = speed
         self.health = health
         self.boosts = list()
         self.items = list()
@@ -31,24 +32,24 @@ class Racer:
         self.speed += boost_total
         return boost_total
 
-def checkWinner(self, racer1, racer2):
-    if racer1.speed > 100 and racer1.speed > racer2.speed:
-        print("Racer1 wins!")
-    elif racer2.speed > 100 and racer2.speed > racer1.speed:
-        print("Racer 2 wins!")
-    elif racer1.speed == racer2.speed:
-        print("It's a tie!")
+    def isAlive(self):
+        if self.health > 0:
+            return True
+        elif self.health <= 0:
+            return False
+
+    def hitOtherPlayer(self, enemy):
+        for item in self.items:
+            if item.selectedItem == 1:
+                if self.isAlive() and enemy.isAlive():
+                    enemy.health -= item.attack()
+
+    def checkWinner(self, racer1, racer2):
+        if racer1.speed > 100 and racer1.speed > racer2.speed:
+            print("Racer1 wins!")
+        elif racer2.speed > 100 and racer2.speed > racer1.speed:
+            print("Racer 2 wins!")
+        elif racer1.speed == racer2.speed:
+            print("It's a tie!")
             #gameRunning=false
 
-#while gameRunning == true
-#powerUp1 = PowerUp("Speed", 100)
-item1 = Item("Booster")
-racer1 = Racer()
-racer1.addItem(item1)
-print(racer1.totalBoost())
-print(racer1.speed)
-
-print(racer1.totalPowerUp())
-powerup1 = PowerUp("Booma")
-racer1.getPowerUp(powerup1)
-print(racer1.totalPowerUp())
