@@ -10,13 +10,12 @@ class Racer:
         self.boosts = list()
         self.items = list()
 
-    def speak(self, message):
-        print(message)
-
     def getPowerUp(self, powerUp):
+        #This function adds a powerup to the list
         self.boosts.append(powerUp)
 
     def addItem(self, item):
+        #This function adds an item to the list
         self.items.append(item)
     
     def totalBoost(self):
@@ -32,4 +31,8 @@ class Racer:
             boost_total += boost.increaseSpeed()
         self.speed += boost_total
         return boost_total
+
+    def returnSpeed(self):
+      return f"The speed of {self.name} is now {self.speed}"
+
 
