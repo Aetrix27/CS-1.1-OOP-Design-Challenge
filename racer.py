@@ -20,15 +20,15 @@ class Racer:
     
     def totalBoost(self):
         boost_total = 0
-        for item in self.items:
-            boost_total += item.increaseSpeed()
+        #Adds the most current item
+        if (self.items[-1] == "Jet Booster" or self.items[-1] == "Speed Booster"):
+            boost_total += self.items[-1].increaseSpeed()
         self.speed += boost_total
         return boost_total
     
     def totalPowerUp(self):
         boost_total = 0
-        for boost in self.boosts:
-            boost_total += boost.increaseSpeed()
+        boost_total += self.boosts[-1].increaseSpeed()
         self.speed += boost_total
         return boost_total
 

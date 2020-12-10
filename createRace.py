@@ -38,16 +38,26 @@ class createRace():
                 playerRacer = CyborgAnimal(True, name)
 
             for possibleItem in range(3):
-                playerGetItemChance = random.randint(0,2)
+                playerGetItemChance = random.randint(0,5)
+                playerGetPowerUpChance = random.randint(0,2)
+                playerGotPowerUp = False
                 playerGotItem = False
                 enemyGetItemChance = random.randint(0,2)
+                enemyGetPowerUpChance = random.randint(0,5)
+                enemyGotPowerUp = False
                 enemyGotItem = False
 
                 if playerGetItemChance == 0:
                     playerGotItem = True
-                
+                                
                 if enemyGetItemChance == 0:
                     enemyGotItem = True
+
+                if playerGetPowerUpChance == 1:
+                    playerGotItem = True
+                
+                if enemyGetPowerUpChance == 1:
+                    playerGotItem = True
 
                 if playerGotItem == True:
                     itemNames[possibleItem] = Item()
@@ -63,13 +73,14 @@ class createRace():
                     enemyRacer.totalBoost()
                     print(enemyRacer.returnSpeed())
 
-                if possibleItem == 2:
+                if playerGotPowerUp == True:
                     powerup1 = PowerUp()
                     playerRacer.getPowerUp(powerup1)
                     playerRacer.totalPowerUp()
                     playerRacer.returnSpeed()
                     print(playerRacer.returnSpeed())
 
+                if enemyGotPowerUp == True:
                     powerup2 = PowerUp()
                     enemyRacer.getPowerUp(powerup2)
                     enemyRacer.totalPowerUp()
