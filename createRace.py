@@ -45,6 +45,9 @@ class createRace():
 
                 if playerGetItemChance == 0:
                     playerGotItem = True
+                
+                if enemyGetItemChance == 0:
+                    enemyGotItem = True
 
                 if playerGotItem == True:
                     itemNames[possibleItem] = Item()
